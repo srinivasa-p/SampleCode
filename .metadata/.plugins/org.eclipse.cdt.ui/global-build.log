@@ -1,31 +1,266 @@
-11:28:30 **** Incremental Build of configuration Debug for project UART_Sample ****
+17:07:59 **** Incremental Build of configuration Debug for project UART_Driver ****
 make -j23 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:102:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  102 |           HAL_UART_Transmit(&huart1, data, sizeof(data), 1000);
-      |                                      ^~~~
-      |                                      |
-      |                                      char *
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
-  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-arm-none-eabi-gcc -o "UART_Sample.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Sample\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Sample.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: UART_Sample.elf
+../Core/Src/main.c:111:17: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+  111 |           while(!(USART2->SR) & (1U << 7)); //TXE
+      |                 ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
  
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4856	     20	   1572	   6448	   1930	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:08:00 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
 arm-none-eabi-size  UART_Sample.elf 
-arm-none-eabi-objdump -h -S UART_Sample.elf  > "UART_Sample.list"
    text	   data	    bss	    dec	    hex	filename
    8060	     20	   1644	   9724	   25fc	UART_Sample.elf
 Finished building: default.size.stdout
  
-Finished building: UART_Sample.list
+17:09:13 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
  
-11:33:16 **** Incremental Build of configuration Debug for project UART_Sample ****
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:09:13 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
+arm-none-eabi-size  UART_Sample.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1644	   9724	   25fc	UART_Sample.elf
+Finished building: default.size.stdout
+ 
+17:09:43 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:09:50 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:10:09 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:11:12 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:12:13 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:12:59 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:16:07 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:16:08 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
+arm-none-eabi-size  UART_Sample.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1644	   9724	   25fc	UART_Sample.elf
+Finished building: default.size.stdout
+ 
+17:16:13 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:16:26 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:16:26 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
+arm-none-eabi-size  UART_Sample.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1644	   9724	   25fc	UART_Sample.elf
+Finished building: default.size.stdout
+ 
+17:16:35 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:19:33 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4864	     20	   1572	   6456	   1938	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:20:55 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4940	     20	   1572	   6532	   1984	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:20:55 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
+arm-none-eabi-size  UART_Sample.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1644	   9724	   25fc	UART_Sample.elf
+Finished building: default.size.stdout
+ 
+17:20:58 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4940	     20	   1572	   6532	   1984	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:22:51 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4940	     20	   1572	   6532	   1984	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:23:52 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4940	     20	   1572	   6532	   1984	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:27:51 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4976	     20	   1572	   6568	   19a8	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:27:52 **** Incremental Build of configuration Debug for project UART_Sample ****
+make -j23 all 
+arm-none-eabi-size  UART_Sample.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1644	   9724	   25fc	UART_Sample.elf
+Finished building: default.size.stdout
+ 
+17:27:58 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4976	     20	   1572	   6568	   19a8	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:28:57 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-size  UART_Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4976	     20	   1572	   6568	   19a8	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+17:34:02 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4968	     20	   1572	   6560	   19a0	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:35:31 **** Incremental Build of configuration Debug for project UART_Driver ****
+make -j23 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Study\gitHub-Labwork\SampleCode\UART_Driver\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver.elf
+ 
+arm-none-eabi-size  UART_Driver.elf 
+arm-none-eabi-objdump -h -S UART_Driver.elf  > "UART_Driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   4968	     20	   1572	   6560	   19a0	UART_Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver.list
+ 
+17:35:31 **** Incremental Build of configuration Debug for project UART_Sample ****
 make -j23 all 
 arm-none-eabi-size  UART_Sample.elf 
    text	   data	    bss	    dec	    hex	filename

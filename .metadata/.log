@@ -16,3 +16,33 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-02-08 11:22:20.537
 !MESSAGE Indexed 'UART_Sample' (19 sources, 81 headers) in 3.37 sec: 4,276 declarations; 17,905 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.009%)
+!SESSION 2025-02-08 14:18:54.838 -----------------------------------------------
+eclipse.buildId=Version 1.14.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-02-08 14:19:13.682
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-02-08 14:19:13.689
+!MESSAGE Log4j2 initialized with config file D:\Study\gitHub-Labwork\SampleCode\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-02-08 14:19:20.144
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-02-08 14:20:26.406
+!MESSAGE Indexed 'UART_Driver' (19 sources, 81 headers) in 1.61 sec: 4,276 declarations; 17,905 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.009%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-02-08 17:29:05.022
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 13 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-02-08 17:29:05.022
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-02-08 17:29:05.023
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 13 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-02-08 17:29:05.023
+!MESSAGE Existing sessions are:
