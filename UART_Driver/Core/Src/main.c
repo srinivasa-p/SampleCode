@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -86,6 +86,8 @@ void tx(uint8_t data) {
 int main(void) {
 	/* USER CODE BEGIN 1 */
 	char txdata = 'S';
+	char *txString = "Srini\n";
+	int len, count = 0;
 	/* USER CODE END 1 */
 
 	/* MCU Configuration--------------------------------------------------------*/
@@ -107,6 +109,7 @@ int main(void) {
 	/* Initialize all configured peripherals */
 	/* USER CODE BEGIN 2 */
 	Init();
+	len = strlen(txString);
 
 	/* USER CODE END 2 */
 
@@ -118,6 +121,15 @@ int main(void) {
 		/* USER CODE BEGIN 3 */
 		tx(txdata);
 		HAL_Delay(10);
+
+		// Word transfer
+
+		for (count = 0 ; count < len; count++)
+		{
+			tx(txString[count]);
+			HAL_Delay(1);
+		}
+		HAL_Delay(1000); // 1 sec
 
 	}
 	/* USER CODE END 3 */
