@@ -62,8 +62,8 @@ void Init(void) {
 	GPIOA->AFR[0] |= (7U << 8);
 	GPIOA->AFR[0] |= (7U << 12);
 
-//	USART2->BRR |= (8U << 4) | (11U << 0); //115200
-	USART2->BRR |= 16000000 / 115200; //115200
+	USART2->BRR |= (8U << 4) | (11U << 0); //115200
+//	USART2->BRR |= 16000000 / 115200; //115200
 	USART2->CR1 = (1U << 3) | (1U << 2);
 	USART2->CR1 |= (1U << 13);
 
@@ -86,6 +86,7 @@ void tx(uint8_t data) {
 int main(void) {
 	/* USER CODE BEGIN 1 */
 	char txdata = 'S';
+	char txData2 = 'R';
 	char *txString = "Srini\n";
 	int len, count = 0;
 	/* USER CODE END 1 */
@@ -120,16 +121,18 @@ int main(void) {
 
 		/* USER CODE BEGIN 3 */
 		tx(txdata);
-		HAL_Delay(10);
+		HAL_Delay(1000);
+		tx(txData2);
+		HAL_Delay(1000);
 
 		// Word transfer
 
-		for (count = 0 ; count < len; count++)
-		{
-			tx(txString[count]);
-			HAL_Delay(1);
-		}
-		HAL_Delay(1000); // 1 sec
+//		for (count = 0 ; count < len; count++)
+//		{
+//			tx(txString[count]);
+//			HAL_Delay(1);
+//		}
+//		HAL_Delay(1000); // 1 sec
 
 	}
 	/* USER CODE END 3 */
